@@ -8,8 +8,8 @@ describe ('Battle', () => {
   let wizard;
   beforeEach( () => {
     battle = new Battle();
-    warrior = new Character(3, 0, 100);
-    wizard = new Character(0, 3, 100);
+    warrior = new Character(3, 0);
+    wizard = new Character(0, 3);
   });
 
   test('should create a battle object', () => {

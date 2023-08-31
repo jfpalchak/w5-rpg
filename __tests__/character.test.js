@@ -6,7 +6,7 @@ describe('Character', () => {
   let swordItem;
   let shieldItem;
   beforeEach(() => {
-    character = new Character(3, 3, 100);
+    character = new Character(3, 3);
     swordItem = {item: "weapon", type: "sword", attack: 10};
     shieldItem = {item: "armor", type: "shield", defense: 15};
   });
@@ -14,9 +14,10 @@ describe('Character', () => {
   test('should create a character object', () => {
     let character = new Character();
     expect(character).toEqual({
+      level: 1,
       strength: undefined,
       intelligence: undefined, 
-      health: undefined, 
+      health: 100, 
       inventory: {}
     });
   });
@@ -59,7 +60,7 @@ describe('Character', () => {
     character.takeDamage(10);
     expect(character.health).toEqual(95);
   });
-
+  
 });
 
 
