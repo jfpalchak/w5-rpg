@@ -11,12 +11,12 @@ export class Battle {
     return this.currentId;
   }
 
-  numberOfPlayers() {
-    return Object.keys(this.players).length;
-  }
+  // numberOfPlayers() {
+  //   return Object.keys(this.players).length;
+  // }
 
   addPlayer(character) {
-    let id = this.numberOfPlayers() + 1;
+    let id = this.assignId();
     this.players[id] = character;
   }
 
