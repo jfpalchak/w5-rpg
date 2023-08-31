@@ -15,9 +15,15 @@ export class Battle {
   //   return Object.keys(this.players).length;
   // }
 
-  addPlayer(character) {
-    let id = this.assignId();
-    this.players[id] = character;
+  addPlayer() {
+    for (let i=0; i < arguments.length; i++) {
+      let id = this.assignId();
+      this.players[id] = arguments[i];
+    }
+  }
+ 
+  rollInitiative() {
+    
   }
 
 
