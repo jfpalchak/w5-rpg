@@ -6,14 +6,19 @@ describe('Character', () => {
   let swordItem;
   let shieldItem;
   beforeEach(() => {
-    character = new Character(3, 100);
+    character = new Character(3, 3, 100);
     swordItem = {item: "weapon", type: "sword", attack: 10};
     shieldItem = {item: "armor", type: "shield", defense: 15};
   });
 
   test('should create a character object', () => {
     let character = new Character();
-    expect(character).toEqual({strength: undefined, health: undefined, inventory: {}});
+    expect(character).toEqual({
+      strength: undefined,
+      intelligence: undefined, 
+      health: undefined, 
+      inventory: {}
+    });
   });
 
   test('should compute damage caused based on strength', () => {

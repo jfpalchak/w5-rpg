@@ -4,8 +4,12 @@ import {Character} from './../src/js/character.js';
 describe ('Battle', () => {
 
   let battle;
+  let warrior;
+  let wizard;
   beforeEach( () => {
     battle = new Battle();
+    warrior = new Character(3, 0, 100);
+    wizard = new Character(0, 3, 100);
   });
 
   test('should create a battle object', () => {
@@ -25,9 +29,14 @@ describe ('Battle', () => {
   // });
 
   test('should add character object to list of players in battle', () => {
-    let warrior = new Character(3, 100);
     battle.addPlayer(warrior);
-    expect(battle.players).toEqual({1: {strength: 3, health: 100, inventory: {}}});
+    expect(battle.players).toEqual({1: {strength: 3, intelligence: 0, health: 100, inventory: {}}});
+  });
+
+  test('should be able to add multiple character objects to list of players in battle', () => {
+    battle.addPlayer(warrior, wizard);
+    expect(battle.players[1]).toEqual({strength: 3, intelligence: 0, health: 100, inventory: {}});
+    expect(battle.players[2]).toEqual({strength: 0, intelligence: 3, health: 100, inventory: {}});
   });
 
 
