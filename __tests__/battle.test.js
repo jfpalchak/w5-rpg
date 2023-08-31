@@ -23,10 +23,10 @@ describe ('Battle', () => {
     expect(battle.currentId).toEqual(1);
   });
 
-  // test('should return the number of players currently in battle', () => {
-  //   let number = battle.numberOfPlayers();
-  //   expect(number).toEqual(0);
-  // });
+  test('should return the number of players currently in battle', () => {
+    let number = battle.numberOfPlayers();
+    expect(number).toEqual(0);
+  });
 
   test('should add character object to list of players in battle', () => {
     battle.addPlayer(warrior);
