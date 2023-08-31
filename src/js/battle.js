@@ -36,6 +36,11 @@ export class Battle {
     return keys;
   }
 
+  // return a random number between 1 and 20
+  d20() {
+    
+  }
+
   // according to initiative, each player takes a turn attacking
   playRound(turnOrder) {
 
