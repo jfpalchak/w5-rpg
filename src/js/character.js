@@ -1,6 +1,7 @@
 export class Character {
-  constructor(strength, health) {
+  constructor(strength, intelligence, health) {
     this.strength = strength;
+    this.intelligence = intelligence;
     this.health = health;
     this.inventory = {};
   }
@@ -31,6 +32,7 @@ export class Character {
     this.inventory[newItem.item] = newItem;
   }
 
+  // remove item from inventory, according to item type
   removeItem(itemType) {
     delete this.inventory[itemType];
   }
