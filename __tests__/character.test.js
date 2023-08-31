@@ -37,10 +37,16 @@ describe('Character', () => {
     expect(damage).toEqual(30);
   });
 
-  test('should compute character health value after taking damage, based on character armor', () => {
+  test('should compute damage reduction from armor, when damage is greater than armor defense', () => {
     character.addItem(shieldItem);
     character.takeDamage(30);
     expect(character.health).toEqual(85);
+  });
+
+  test('should compute damage reduction from armor, when damage is less than armor defense', () => {
+    character.addItem(shieldItem);
+    character.takeDamage(10);
+    expect(character.health).toEqual(95);
   });
 
 });
