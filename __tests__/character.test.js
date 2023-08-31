@@ -17,6 +17,7 @@ describe('Character', () => {
     let character = new Character();
     expect(character).toEqual({
       level: 1,
+      experience: 0,
       strength: undefined,
       intelligence: undefined, 
       health: 100, 
@@ -63,6 +64,16 @@ describe('Character', () => {
     expect(character.health).toEqual(95);
   });
 
+});
+
+describe('Level System', () => {
+
+  test('should increment the characters experience by the given amount', () => {
+    character.calculateExp(20);
+    expect(character.experience).toEqual(20);
+  });
+
+  
 });
 
 
