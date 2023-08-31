@@ -68,12 +68,22 @@ describe('Character', () => {
 
 describe('Level System', () => {
 
+  let character;
+  beforeEach(() => {
+    character = new Character(3, 3);
+  });
+
   test('should increment the characters experience by the given amount', () => {
     character.calculateExp(20);
     expect(character.experience).toEqual(20);
   });
 
-  
+  test('should increment the characters level if the appropriate amount of experience is gained', () => {
+    character.calculateExp(110);
+    expect(character.level).toEqual(2);
+  });
+
+
 });
 
 
