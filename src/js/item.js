@@ -5,17 +5,17 @@ export class Item {
 }
 
 export class Weapon extends Item {
-  // constructor(type, attackPower) {
-    // super("weapon");
-    // this.type = type;
-    // this.attack = attackPower;
-  // }
+  constructor(type, attackPower) {
+    super("weapon");
+    this.type = type;
+    this.attack = attackPower;
+  }
 }
 
 export class Armor extends Item {
-  // constructor(type, defensePower) {
-  //   super("armor");
-  //   this.type = type;
-  //   this.defense = defensePower;
-  // }
+  constructor(type, defensePower) {
+    super("armor");
+    this.type = type;
+    this.defense = defensePower;
+  }
 }
