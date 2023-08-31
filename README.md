@@ -9,7 +9,6 @@
 * HTML
 * CSS
 * JavaScript
-* Bootstrap v5.2.3 
 * Node v16.13.1
 * npm v8.1.2
 * webpack v4.46.0
