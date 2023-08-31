@@ -11,7 +11,7 @@ describe('Character', () => {
     shieldItem = {item: "armor", type: "shield", defense: 15};
   });
 
-  test('should create an undefined character object', () => {
+  test('should create a character object', () => {
     let character = new Character();
     expect(character).toEqual({strength: undefined, health: undefined, inventory: {}});
   });
@@ -31,19 +31,25 @@ describe('Character', () => {
     expect(character.inventory).toEqual({weapon: {item: "weapon", type: "sword", attack: 10}});
   });
 
+  test('should remove an item from the character inventory', () => {
+    character.addItem(swordItem);
+    character.removeItem("weapon");
+    expect(character.inventory).toEqual({});
+  });
+
   test('should compute damage caused based on character weapon', () => {
     character.addItem(swordItem);
     let damage = character.dealDamage();
     expect(damage).toEqual(30);
   });
 
-  test('should compute damage reduction from armor, when damage is greater than armor defense', () => {
+  test('should compute damage reduction from armor, when damage > armor defense', () => {
     character.addItem(shieldItem);
     character.takeDamage(30);
     expect(character.health).toEqual(85);
   });
 
-  test('should compute damage reduction from armor, when damage is less than armor defense', () => {
+  test('should compute damage reduction from armor, when damage <= armor defense', () => {
     character.addItem(shieldItem);
     character.takeDamage(10);
     expect(character.health).toEqual(95);
