@@ -14,8 +14,15 @@ export class Character {
     return damage;
   }
 
-  // calculate character health based on damage received
+  // calculate character health based on damage and armor
   takeDamage(damage) {
+    if (this.inventory.armor) {
+      if (damage > this.inventory.armor.defense) {
+        damage = damage - this.inventory.armor.defense;
+      } else {
+        damage = Math.ceil(damage / 2);
+      }
+    } 
     this.health = this.health - damage;
   }
 
