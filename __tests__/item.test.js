@@ -3,8 +3,11 @@ import {Item, Weapon, Armor} from './../src/js/item.js';
 describe('Item', () => {
 
   test('should create an Item object', () => {
-    let newItem = new Item("weapon");
-    expect(newItem).toEqual({item: "weapon"});
+    let newItem = new Item("weapon", 100);
+    expect(newItem).toEqual({
+      item: "weapon",
+      value: 100
+    });
   });
 
 });
@@ -16,7 +19,8 @@ describe('Weapon', () => {
     expect(newWeapon).toEqual({
       item: "weapon",
       type: "sword",
-      attack: 10
+      attack: 10,
+      value: 200
     });
   });
 
@@ -29,7 +33,8 @@ describe('Armor', () => {
     expect(newArmor).toEqual({
       item: "armor",
       type: "shield",
-      defense: 15
+      defense: 15,
+      value: 150
     });
   });
 

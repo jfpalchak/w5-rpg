@@ -1,4 +1,6 @@
 import {Character} from './../src/js/character.js';
+import {Weapon, Armor} from './../src/js/item.js';
+
 
 describe('Character', () => {
 
@@ -7,8 +9,8 @@ describe('Character', () => {
   let shieldItem;
   beforeEach(() => {
     character = new Character(3, 3);
-    swordItem = {item: "weapon", type: "sword", attack: 10};
-    shieldItem = {item: "armor", type: "shield", defense: 15};
+    swordItem = new Weapon("sword", 10);
+    shieldItem = new Armor("shield", 15);
   });
 
   test('should create a character object', () => {
@@ -60,7 +62,7 @@ describe('Character', () => {
     character.takeDamage(10);
     expect(character.health).toEqual(95);
   });
-  
+
 });
 
 
