@@ -1,13 +1,12 @@
 export class Character {
-  constructor(strength, health, inventory) {
+  constructor(strength, health) {
     this.strength = strength;
     this.health = health;
-    this.inventory = inventory;
+    this.inventory = {};
   }
 
   dealDamage() {
-    let damage; 
-    damage = this.strength * this.inventory;
+    let damage = this.strength;
     return damage;
 
   }
@@ -15,6 +14,8 @@ export class Character {
   takeDamage(damage) {
     this.health = this.health - damage;
   }
+
+  
 }
 
 
