@@ -31,4 +31,8 @@ export class Character {
     this.inventory[newItem.item] = newItem;
   }
 
+  removeItem(itemType) {
+    delete this.inventory[itemType];
+  }
+
 }
