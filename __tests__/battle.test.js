@@ -10,6 +10,13 @@ describe ('Battle', () => {
 
   test('should create a battle object', () => {
     expect(battle.players).toEqual({});
+    expect(battle.currentId).toEqual(0);
+  });
+
+  test('should return currentId after incrementing currentId by 1', () => {
+    let id = battle.assignId();
+    expect(id).toEqual(1);
+    expect(battle.currentId).toEqual(1);
   });
 
   test('should return the number of players currently in battle', () => {
