@@ -25,8 +25,16 @@ export class Battle {
     }
   }
  
+  // return an array of shuffled player keys, representing turn order,
+  // where first index is first to attack
+  // Utilizes the Fisher-Yates Sorting Algorithm
   rollInitiative() {
-    
+    let keys = Object.keys(this.players);
+    for (let i = keys.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i+1));
+      [keys[i], keys[j]] = [keys[j], keys[i]];
+    }
+    return keys;
   }
 
 
