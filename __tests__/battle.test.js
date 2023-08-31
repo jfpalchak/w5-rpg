@@ -30,13 +30,20 @@ describe ('Battle', () => {
 
   test('should add character object to list of players in battle', () => {
     battle.addPlayer(warrior);
-    expect(battle.players).toEqual({1: {strength: 3, intelligence: 0, health: 100, inventory: {}}});
+    expect(battle.players).toEqual({1: warrior});
   });
 
   test('should be able to add multiple character objects to list of players in battle', () => {
     battle.addPlayer(warrior, wizard);
-    expect(battle.players[1]).toEqual({strength: 3, intelligence: 0, health: 100, inventory: {}});
-    expect(battle.players[2]).toEqual({strength: 0, intelligence: 3, health: 100, inventory: {}});
+    expect(battle.players[1]).toEqual(warrior);
+    expect(battle.players[2]).toEqual(wizard);
+  });
+
+  test('should return a shuffled array of all the player keys', () => {
+    battle.addPlayer(warrior, wizard);
+    let turnList = battle.rollInitiative();
+    expect(turnList).toContain('1');
+    expect(turnList).toContain('2');
   });
 
 
