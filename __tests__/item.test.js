@@ -1,4 +1,4 @@
-import {Item, Weapon} from './../src/js/item.js';
+import {Item, Weapon, Armor} from './../src/js/item.js';
 
 describe('Item', () => {
 
@@ -25,8 +25,8 @@ describe('Weapon', () => {
 describe('Armor', () => {
 
   test('should create an Armor object, as an extension of Item', () => {
-    let newWeapon = new Weapon("shield", 15);
-    expect(newWeapon).toEqual({
+    let newArmor = new Armor("shield", 15);
+    expect(newArmor).toEqual({
       item: "armor",
       type: "shield",
       defense: 15
