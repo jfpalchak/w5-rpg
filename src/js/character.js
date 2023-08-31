@@ -1,6 +1,7 @@
 export class Character {
   constructor(strength, intelligence) {
     this.level = 1;
+    this.experience = 0;
     this.strength = strength;
     this.intelligence = intelligence;
     this.health = 100;
@@ -36,6 +37,18 @@ export class Character {
   // remove item from inventory, according to item type
   removeItem(itemType) {
     delete this.inventory[itemType];
+  }
+
+  calculateExp(expGain) {
+    this.experience += expGain;
+
+    let exp = this.experience;
+    let expCap = ((this.level * 100) - 1);
+    
+    if (exp >= expCap) {
+      this.experience = this.experience - expCap;
+      this.level += 1;
+    }
   }
 
 }

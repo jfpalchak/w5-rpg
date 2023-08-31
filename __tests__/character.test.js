@@ -83,6 +83,12 @@ describe('Level System', () => {
     expect(character.level).toEqual(2);
   });
 
+  test('should reset character experience to whatever is left over, after leveling up', () => {
+    character.calculateExp(110);
+    expect(character.level).toEqual(2);
+    expect(character.experience).toEqual(11);
+  });
+
 
 });
 
