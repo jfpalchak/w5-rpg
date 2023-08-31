@@ -25,7 +25,13 @@ describe('Character', () => {
   test('should add an item object to the character inventory', () => {
     const swordItem = {type: "Sword", attack: 10};
     character.addItem(swordItem);
-    expect(character.inventory).toEqual({type: "Sword", attack: 10});
+    expect(character.inventory).toEqual({Sword: {type: "Sword", attack: 10}});
+  });
+
+  test('should recognize if item is a weapon when adding to character inventory', () => {
+    const swordItem = {type: "Sword", attack: 10};
+    character.addItem(swordItem);
+    expect(character.inventory).toEqual({Weapon: {type: "Sword", attack: 10}});
   });
 
 });
