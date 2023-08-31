@@ -15,9 +15,10 @@ export class Character {
     this.health = this.health - damage;
   }
 
-  addItem(item) {
-    this.inventory[item.type] = item;
+  addItem(newItem) {
+    this.inventory[newItem.item] = newItem;
   }
+  
 
 }
 
