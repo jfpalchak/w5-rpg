@@ -33,7 +33,7 @@ describe('Character', () => {
 
   test('should add an item to the character inventory', () => {
     character.addItem(swordItem);
-    expect(character.inventory).toEqual({weapon: {item: "weapon", type: "sword", attack: 10}});
+    expect(character.inventory).toEqual({weapon: swordItem});
   });
 
   test('should remove an item from the character inventory', () => {
