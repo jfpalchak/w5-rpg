@@ -4,17 +4,17 @@ describe('Character', () => {
 
   let character;
   beforeEach(() => {
-    character = new Character(3, 100, 10);
+    character = new Character(3, 100);
   });
 
   test('should create an character object', () => {
     let character = new Character();
-    expect(character).toEqual({strength: undefined, health: undefined, inventory: undefined});
+    expect(character).toEqual({strength: undefined, health: undefined, inventory: {}});
   });
 
   test('should compute damage caused', () => {
     let damage = character.dealDamage();
-    expect(damage).toEqual(30);
+    expect(damage).toEqual(3);
   });
 
   test('should compute damage taken', () => {
