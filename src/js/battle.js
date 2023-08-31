@@ -10,7 +10,7 @@ export class Battle {
   }
 
   addPlayer(character) {
-    let id = Object.keys(this.players).length + 1;
+    let id = this.numberOfPlayers() + 1;
     this.players[id] = character;
   }
 
